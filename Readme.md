@@ -18,15 +18,30 @@ ___
 ___
 
 ### Principles and Strategies of Design
-`Aggregation:` implies a relationship where the child can exist independently of the parent.
+**`Aggregation:`** implies a relationship where the child can exist independently of the parent.
   - `Example`: Class (**parent**) and Student (**child**). Delete the Class and the Students still exist.
 
-`Composition:` implies a relationship where the child cannot exist independent of the parent. 
+**`Composition:`** implies a relationship where the child cannot exist independent of the parent. 
   - `Example`: House (**parent**) and Room (**child**). Rooms don't exist separate to a House.
 
-`Aggregation VS Composition:` Aggregation implies a relationship where the child can exist independently of the parent. Example: Class (parent) and Student (child). Delete the Class and the Students still exist. Composition implies a relationship where the child cannot exist independent of the parent.
+**`Aggregation VS Composition:`** Aggregation implies a relationship where the child can exist independently of the parent. Example: Class (parent) and Student (child). Delete the Class and the Students still exist. Composition implies a relationship where the child cannot exist independent of the parent.
 
-`Programming to an interface:`
+**`Design smell: `**: In computer programming, a design smell is a structure in a design that indicates a violation of fundamental design principles, and which can negatively impact the project's quality.
+  - **`Rigidity:`** A design is rigid if a single change causes a cascade of subsequent changes in dependent modules. The more modules must be changed, the more rigid the design. Rigidity makes it expensive to change software because even a simple change can cause a lot of unexpected changes.
+
+  - **`Fragility`**: Fragility is the tendency of a program to break in many places even when a single change is made. When developers try to fix those problems, the new problems occur and the modules are getting worse and worse the more they are being fixed. A design is fragile when changing code in one place can break code in other places that might not be related to the changed code at all. Fragility makes it risky to change software because even a simple change can break code in the places that seem irrelevant to the changed code. It also makes the software less reliable, because the broken code due to the changes irrelevant to it might not be detected during development and thus can escape to the production environment.
+
+  - **`Immobility`**: Software is immobile when none of its parts can be used in other systems because the risk and effort involved with separating those parts from the original system are too great. A design is immobile when it is difficult to extract code in one part of the system to make it reuseable by other parts. The extraction is hard because the code to be extracted gets so entangled with other code that it cannot be extracted without affecting or including the other code. Immobility causes code duplication because it hinders code reuse.
+
+  - **`Software viscosity`**: Viscosity refers to the ease at which a developer can add design-preserving code to a system. If it is easy to add new code to the program while maintaining the design, then the program has low viscosity and that's the right thing. A design is viscous when not-good solutions are more convenient than good ones. For example, given a problem and two possible solutions, one follows good practices and one does not. If the design makes it convenient to implement the latter, then the design is said to be viscous. Because viscosity makes it easier to do the wrong things than to do the right things, it makes way for bad practices and thus progressively degrades the software quality.
+
+  - **`Needless Complexity`**: Code base is needlessly complex when it contains code that is not useful. Just to take one such case is developers try to anticipate future requirements and changes and put into the code parts that do not have to be there at the moment and probably never used in the future. Needless complexity is when a design is more complicated than it has to be. In other words, the system consists of redundant parts that do not contribute any value to the system functionality. Most of the time, those parts are the consequences of over-designing the solution to a problem at hand. For example, given a problem and two solutions, one is simple and one uses a sophisticated design pattern, if the latter is chosen simply because design patterns are known to be good practices or because of some unknown future requirements, then needless complexity has been introduced into the system. Needless complexity makes code more complicated, less comprehensible, and less maintainable.
+
+  - **`Needless repetition`**: Same code appears in different locations, every time with slight change. This makes system hard to understand and maintain and it is sign that developers are missing abstraction. Needless repetition is when similar code or code in slightly different forms appear at different places. This is usually a consequence of immobility or simply of developer laziness. Needless repetition makes code less maintainable, because if one piece of code is found as buggy, all the similar pieces of code must be checked and fixed. This task can easily go out of hand in large systems.
+    
+  - **`Opacity`**:  It is a tendency of software code to be difficult to understand. Codebase that evolves over time tends to become more and more opaque with age. Opacity hinders code maintainability because unreadable code takes more time to comprehend and sometimes can even be misunderstood.
+
+**`Programming to an interface:`**
 
 
 
