@@ -41,7 +41,9 @@ ___
     
   - **`Opacity`**:  It is a tendency of software code to be difficult to understand. Codebase that evolves over time tends to become more and more opaque with age. Opacity hinders code maintainability because unreadable code takes more time to comprehend and sometimes can even be misunderstood.
 
-**`Programming to an interface:`**
+**`Programming to an interface:`** Programming to an interface means designing code based on abstractions (interfaces or abstract classes) rather than concrete implementations. In this approach, objects interact with each other through predefined interfaces or abstract methods, which define what an object should do, but not how it does it. This encourages loose coupling between components, allowing them to be interchangeable, more flexible, and easier to maintain. In Java, for example, the interface keyword is used to define a contract that classes must follow by implementing its methods. Alternatively, an abstract class can define both abstract methods (requiring implementation) and concrete methods (already implemented). Clients (objects) rely on the abstraction, not the concrete class, allowing developers to change the underlying implementation without modifying the client code. This is a core principle of object-oriented design, enabling polymorphism and promoting scalable, modular applications.
+
+
 
 
 
