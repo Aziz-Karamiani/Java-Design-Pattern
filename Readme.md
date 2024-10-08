@@ -87,7 +87,37 @@ ___
 - **Dynamic Behavior**: Delegation enables dynamic changes to behavior at runtime, especially when combined with design patterns like the Strategy pattern, allowing behavior to change without altering the client code.
 
 ___
-## SOLID PRINCIPLES
+### SOLID Principles
+
+1. **S - Single Responsibility Principle (SRP)**
+    - **Definition**: A class should have only one reason to change, meaning it should have only one responsibility or job.
+    - **Benefit**: This keeps classes focused and makes them easier to understand, test, and maintain. It also helps reduce the risk of side effects from changes.
+
+2. **O - Open/Closed Principle (OCP)**
+    - **Definition**: Software entities (like classes, modules, functions) should be open for extension but closed for modification.
+    - **Benefit**: You can add new functionality without altering existing code, minimizing the risk of introducing bugs and preserving existing behavior.
+
+3. **L - Liskov Substitution Principle (LSP)**
+    - **Definition**: Subtypes should be substitutable for their base types without altering the correctness of the program.
+    - **Benefit**: Ensures that derived classes can seamlessly replace base classes, making the system more predictable and preventing unintended consequences.
+
+4. **I - Interface Segregation Principle (ISP)**
+    - **Definition**: Clients should not be forced to depend on interfaces they do not use. Interfaces should be specific to the clients’ needs.
+    - **Benefit**: This reduces the "fat interface" problem, allowing clients to only interact with the relevant parts, leading to more modular and decoupled systems.
+
+5. **D - Dependency Inversion Principle (DIP)**
+    - **Definition**: High-level modules should not depend on low-level modules. Both should depend on abstractions (e.g., interfaces). Also, abstractions should not depend on details; details should depend on abstractions.
+    - **Benefit**: This reduces the coupling between components, making systems more modular and easier to change. It also fosters flexibility and promotes loose coupling by inverting the dependencies.
+
+### Summary
+- **SRP** ensures classes have a single responsibility.
+- **OCP** allows the system to grow without altering existing code.
+- **LSP** guarantees that objects of derived classes can replace objects of their base class.
+- **ISP** promotes smaller, more focused interfaces.
+- **DIP** encourages depending on abstractions rather than concrete implementations.
+
+These principles together form a foundation for designing robust, maintainable, and scalable software architectures.
+___
 
 
 ### Resources
