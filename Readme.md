@@ -118,6 +118,41 @@ ___
 
 These principles together form a foundation for designing robust, maintainable, and scalable software architectures.
 ___
+## Design Pattern
+- Creational Patterns
+- Structural Patterns
+- Behavioral Patterns
+
+___
+## Creational Patterns
+- **Factory Method** : The Factory Method is a creational design pattern that provides an interface for creating objects, but allows subclasses to alter the type of objects that will be created. The key idea is that instead of calling a constructor directly to create objects, the object creation logic is moved into a separate method, often called create() or factoryMethod().
+
+   This pattern promotes loose coupling by decoupling the client code from the specific classes that it instantiates. The client code interacts with an abstract or base class, and the responsibility of deciding which concrete class to instantiate is deferred to subclasses.
+### Key Characteristics
+1. **Encapsulation of Object Creation**: The client doesn't need to know which specific class to instantiate, just that it will receive an object of a certain type.
+2. **Subclassing for Customization**: Subclasses can override the factory method to change the class of objects that are created.
+3. **Promotes Flexibility**: Provides flexibility to introduce new types of products without changing the client code.
+
+### Structure of Factory Method Pattern
+1. **Creator**: This is typically an abstract class or interface that declares the factory method. It may also provide a default implementation but typically leaves the object creation to be implemented by subclasses.
+2. **Concrete Creator**: This subclass implements the factory method to return an instance of a specific concrete product.
+3. **Product**: This is the interface or abstract class that all products created by the factory must adhere to.
+4. **Concrete Products**: These are the concrete implementations of the `Product` interface. Each corresponds to a type of object the factory method creates.
+### How It Works
+- The **client** interacts with the **Creator** class (which defines the factory method), but the actual object that gets instantiated is determined by the **Concrete Creator** that overrides the factory method.
+- The factory method's return type is usually the abstract type or interface (`Product` in this case), meaning the client code doesn’t need to know about the concrete class being instantiated (`ConcreteProductA` or `ConcreteProductB`).
+
+### Benefits of Factory Method
+- **Decoupling**: The client doesn’t need to know the specific class to create, making the system more flexible and maintainable.
+- **Single Responsibility Principle**: The responsibility for creating objects is moved to a single class, following SRP.
+- **Open/Closed Principle**: It’s easy to introduce new product types by adding new concrete creator classes without modifying the existing code.
+
+### Drawbacks of Factory Method
+- **Complexity**: While flexible, the pattern can lead to increased complexity, especially if there are many different subclasses and factory methods.
+- **Subclassing**: Sometimes, creating subclasses just to override the factory method can introduce unnecessary overhead if the product creation logic isn’t very complex.
+
+___
+- 
 
 
 ### Resources
