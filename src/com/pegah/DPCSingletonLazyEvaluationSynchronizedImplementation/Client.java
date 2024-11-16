@@ -2,7 +2,7 @@ package com.pegah.DPCSingletonLazyEvaluationSynchronizedImplementation;
 
 public class Client {
     public static void main(String[] args) {
-        System.out.println("Singleton Design Pattern Lazy Evaluation Implementation.");
+        System.out.println("Singleton Design Pattern Lazy Evaluation Synchronized Implementation.");
 
         Singleton singleton = Singleton.getInstance();
         // set the data value

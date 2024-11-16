@@ -2,7 +2,7 @@ package com.pegah.DCPSingletonEagerEvaluation;
 
 public class Client {
     public static void main(String[] args) {
-        System.out.println("Singleton Design Pattern Lazy Evaluation Implementation.");
+        System.out.println("Singleton Design Eager Implementation.");
 
         Singleton singleton = Singleton.getInstance();
         // set the data value
