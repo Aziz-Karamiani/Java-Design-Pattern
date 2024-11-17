@@ -344,6 +344,162 @@ ___
 
 The Prototype pattern promotes efficient and flexible object creation by leveraging the power of cloning while minimizing complexity.
 ___
+
+## Structural Design Patterns
+Structural design patterns focus on organizing and composing classes and objects to form efficient, flexible, and reusable structures. These patterns solve common problems related to object composition and relationships, improving code maintainability and scalability.
+
+## 1. Adapter Pattern
+The Adapter pattern converts the interface of a class into another interface expected by the client. It acts as a bridge between incompatible systems.
+
+### **How It Works**
+- The client interacts with an adapter using the interface it understands.
+- The adapter internally calls the incompatible system’s methods, translating data or behavior as needed.
+
+### **Pros**
+- Enables compatibility with legacy systems.
+- Promotes code reuse without modifying existing classes.
+
+### **Cons**
+- Can increase complexity if overused.
+- Adds an additional layer, which may slightly reduce performance.
+
+### **Example**
+Adapting a modern payment gateway API to integrate with an old e-commerce system using a different data format.
+
+---
+## 2. Bridge Pattern
+The Bridge pattern decouples an abstraction from its implementation, allowing both to vary independently. It creates two hierarchies: one for abstractions and another for implementations, connected by a "bridge."
+
+### **How It Works**
+- The abstraction defines the high-level logic.
+- The implementation hierarchy provides the specific behaviors.
+
+### **Pros**
+- Improves extensibility by allowing independent development of abstraction and implementation.
+- Encourages separation of concerns.
+
+### **Cons**
+- Introduces additional complexity through multiple hierarchies.
+- May be unnecessary for simple use cases.
+
+### **Example**
+Separating shapes (circle, square) from their rendering methods (vector, raster) so that both can evolve independently.
+
+---
+## 3. Composite Pattern
+The Composite pattern treats individual objects and compositions of objects uniformly, making it ideal for hierarchical structures like trees.
+
+### **How It Works**
+- Components are either "leaf" nodes or "composite" nodes containing other components.
+- Both leaf and composite nodes implement a common interface.
+
+### **Pros**
+- Simplifies operations on hierarchical structures.
+- Reduces the need for special-case handling of individual vs. composite objects.
+
+### **Cons**
+- May add complexity if the hierarchy is simple.
+- Managing parent-child relationships can be tricky.
+
+### **Example**
+A file system where files and folders are treated the same, enabling uniform operations like "delete" or "move."
+
+---
+## 4. Decorator Pattern
+The Decorator pattern dynamically adds responsibilities or behaviors to an object without modifying its structure.
+
+### **How It Works**
+- A decorator wraps an object and implements the same interface.
+- It can add functionality before or after delegating calls to the wrapped object.
+
+### **Pros**
+- Allows adding functionality at runtime without modifying existing code.
+- Adheres to the Single Responsibility Principle.
+
+### **Cons**
+- Can result in a large number of small classes.
+- Debugging can be difficult due to the layered wrapping.
+
+### **Example**
+Adding scrollbars or borders dynamically to a UI component.
+
+---
+## 5. Facade Pattern
+The Facade pattern provides a simplified interface to a complex subsystem, hiding its internal complexities.
+
+### **How It Works**
+- The facade provides a high-level API to the client.
+- Internally, it coordinates calls to subsystem components.
+
+### **Pros**
+- Simplifies interactions with complex systems.
+- Reduces coupling between the client and subsystem.
+
+### **Cons**
+- Can become a "god object" if overloaded with responsibilities.
+- Over-simplification might limit access to advanced features.
+
+### **Example**
+A home theater system where a single remote button starts the TV, sound system, and lighting together.
+
+---
+## 6. Flyweight Pattern
+The Flyweight pattern minimizes memory usage by sharing as much data as possible among similar objects. It separates intrinsic (shared) data from extrinsic (context-specific) data.
+
+### **How It Works**
+- Flyweight objects store shared data (intrinsic).
+- Context-specific data (extrinsic) is provided at runtime.
+
+### **Pros**
+- Reduces memory usage for large numbers of similar objects.
+- Improves performance by minimizing object creation.
+
+### **Cons**
+- Complex to implement, requiring a clear distinction between intrinsic and extrinsic data.
+- Reduced readability and maintainability due to shared state.
+
+### **Example**
+A text editor reusing glyph objects for repeated characters, while their positions are stored separately.
+
+---
+## 7. Proxy Pattern
+The Proxy pattern provides a surrogate or placeholder for another object, controlling access to it. It can add functionality like lazy initialization, logging, or access control.
+
+### **How It Works**
+- The proxy implements the same interface as the actual object.
+- It controls access and delegates calls to the real object as needed.
+
+### **Types of Proxies**
+1. **Virtual Proxy**: Loads expensive objects lazily.
+2. **Remote Proxy**: Represents an object in a different address space (e.g., over a network).
+3. **Protection Proxy**: Controls access to the object based on permissions.
+
+### **Pros**
+- Adds access control, lazy loading, and security.
+- Optimizes performance by deferring expensive operations.
+
+### **Cons**
+- Adds an extra layer of abstraction, which may introduce latency.
+- Increases code complexity.
+
+### **Example**
+A virtual proxy that loads large images only when they’re scrolled into view in a photo gallery.
+
+---
+## **Comparison of Structural Design Patterns**
+
+| **Pattern**    | **Pros**                                                                 | **Cons**                                                                      |
+|-----------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| **Adapter**     | Enables compatibility with legacy systems; promotes code reuse.          | Adds complexity and potential performance overhead.                           |
+| **Bridge**      | Separates abstraction from implementation; improves extensibility.       | Increases design complexity.                                                 |
+| **Composite**   | Simplifies tree structures; treats individual and composite objects uniformly. | Overkill for simple hierarchies; parent-child relationships can be tricky.   |
+| **Decorator**   | Adds functionality at runtime; adheres to SRP.                          | Can result in many small classes; debugging wrapped objects can be difficult. |
+| **Facade**      | Simplifies complex subsystems; reduces coupling.                        | May limit advanced functionality; can become overly large.                   |
+| **Flyweight**   | Reduces memory usage; improves performance.                             | Hard to implement; risks readability and maintainability issues.             |
+| **Proxy**       | Adds access control, lazy loading, and security.                        | Introduces extra abstraction and complexity.                                 |
+
+By understanding and applying these structural patterns, developers can create systems that are easier to maintain, extend, and optimize for real-world use cases.
+___
 - .
 
 
